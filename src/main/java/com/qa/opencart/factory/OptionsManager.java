@@ -19,6 +19,7 @@ public class OptionsManager {
 
     public ChromeOptions getChromeOptions(){
         chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*");
         if(Boolean.parseBoolean(properties.getProperty("incognito").trim())){
             System.out.println("Running under chrome incognito");
             chromeOptions.addArguments("--incognito");
