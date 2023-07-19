@@ -84,9 +84,8 @@ public class DriverFactory {
      */
     public Properties initProperty(){
 
-        //mvn clean install -Denv="qa"
         properties = new Properties();
-        String envName = System.getProperty("env");
+        String envName = System.getProperty("env");//mvn clean install -Denv="qa"
         System.out.println("Running test cases on Env: " + envName);
 
         try {
