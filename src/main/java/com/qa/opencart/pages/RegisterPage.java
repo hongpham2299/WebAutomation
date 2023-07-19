@@ -50,7 +50,7 @@ public class RegisterPage {
         elementUtil.doClick(continueButton);
 
         String successMesg = elementUtil.waitForElementVisible(registerSuccessMessage, OpenCartConstants.DEFAULT_MEDIUM_TIME_OUT).getText();
-        System.out.println("user reg success messg : " + successMesg);
+        System.out.println("User register success message: " + successMesg);
 
         if(successMesg.contains(OpenCartConstants.USER_REG_SUCCESS_MESSG)) {
             elementUtil.doClick(logoutLink);
