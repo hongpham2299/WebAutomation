@@ -35,7 +35,7 @@ public class AccountsPage {
     @Step("Get the current accounts page URL")
     public String getCurrentAccPageURL() {
         String url = elementUtil.waitForURLContainsAndFetch(OpenCartConstants.DEFAULT_SHORT_TIME_OUT, OpenCartConstants.ACCOUNTS_PAGE_URL_FRACTION_VALUE);
-        System.out.println("Account page URL: " + url);
+        System.out.println("Account page url: " + url);
         return url;
     }
 
