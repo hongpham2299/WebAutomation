@@ -6,28 +6,32 @@
 
     <listeners>
         <!-- <listener class-name="com.qa.opencart.listeners.ExtentReportListener" /> -->
-        <listener class-name="com.qa.opencart.listeners.AllureReportListener" />
+        <listener class-name="com.qa.opencart.listeners.AllureReportListener"/>
     </listeners>
 
-    <test name="Login Page Test">
+    <test name="Login Page Test_chrome">
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.qa.opencart.tests.LoginPageTest" />
+            <class name="com.qa.opencart.tests.LoginPageTest"/>
         </classes>
     </test>
 
-    <test name="Account Page Test">
+    <test name="Account Page Test_firefox">
+        <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="com.qa.opencart.tests.AccountPageTest" />
+            <class name="com.qa.opencart.tests.AccountPageTest"/>
         </classes>
     </test>
 
-    <test name="Product Info Page Test">
+    <test name="Product Info Page Test-edge">
+        <parameter name="browser" value="edge"/>
         <classes>
-            <class name="com.qa.opencart.tests.ProductInfoPageTest" />
+            <class name="com.qa.opencart.tests.ProductInfoPageTest"/>
         </classes>
     </test>
 
-    <test name="Register Page Test">
+    <test name="Register Page Test_chrome">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.qa.opencart.tests.RegisterPageTest" />
         </classes>
