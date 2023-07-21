@@ -49,7 +49,7 @@ public class RegisterPage {
         elementUtil.doActionsClick(agreeCheckBox);
         elementUtil.doClick(continueButton);
 
-        String successMesg = elementUtil.waitForElementVisible(registerSuccessMessage, OpenCartConstants.DEFAULT_LONG_TIME_OUT).getText();
+        String successMesg = elementUtil.waitForElementVisible(registerSuccessMessage, OpenCartConstants.DEFAULT_MEDIUM_TIME_OUT).getText();
         System.out.println("User register success message: " + successMesg);
 
         if(successMesg.contains(OpenCartConstants.USER_REG_SUCCESS_MESSG)) {
