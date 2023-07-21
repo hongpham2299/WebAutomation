@@ -18,12 +18,15 @@ public class OptionsManager {
     }
 
     public ChromeOptions getChromeOptions(){
+
         chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
+
         if(Boolean.parseBoolean(properties.getProperty("remote"))){
             chromeOptions.setBrowserVersion(properties.getProperty("browserversion"));
             chromeOptions.setCapability("browser", "chrome");
             chromeOptions.setCapability("enableVNC", true);
+            chromeOptions.setCapability("name", properties.getProperty("testcasename"));
         }
         if(Boolean.parseBoolean(properties.getProperty("incognito").trim())){
             System.out.println("Running under chrome incognito");
