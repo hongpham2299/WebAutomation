@@ -22,12 +22,14 @@ public class OptionsManager {
         chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
 
-        if(Boolean.parseBoolean(properties.getProperty("remote"))){
-            chromeOptions.setBrowserVersion(properties.getProperty("browserversion"));
-            chromeOptions.setCapability("browser", "chrome");
-            chromeOptions.setCapability("enableVNC", true);
-            chromeOptions.setCapability("name", properties.getProperty("testcasename"));
-        }
+//        This is used for selenoid
+//        if(Boolean.parseBoolean(properties.getProperty("remote"))){
+//            chromeOptions.setCapability("browser", "chrome");
+//            chromeOptions.setCapability("enableVNC", true);
+//            chromeOptions.setBrowserVersion(properties.getProperty("browserversion"));
+//            chromeOptions.setCapability("name", properties.getProperty("testcasename"));
+//        }
+
         if(Boolean.parseBoolean(properties.getProperty("incognito").trim())){
             System.out.println("Running under chrome incognito");
             chromeOptions.addArguments("--incognito");
@@ -36,7 +38,9 @@ public class OptionsManager {
     }
 
     public FirefoxOptions getFireFoxOptions(){
+
         firefoxOptions = new FirefoxOptions();
+
         if(Boolean.parseBoolean(properties.getProperty("incognito").trim())){
             System.out.println("Running under firefox incognito");
             firefoxOptions.addArguments("--incognito");
@@ -45,7 +49,9 @@ public class OptionsManager {
     }
 
     public EdgeOptions getEdgeOptions(){
+
         edgeOptions = new EdgeOptions();
+
         if(Boolean.parseBoolean(properties.getProperty("incognito").trim())){
             System.out.println("Running under edge incognito");
             edgeOptions.addArguments("--incognito");
