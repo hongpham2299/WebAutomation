@@ -24,7 +24,22 @@ public class BaseTest {
     protected SoftAssert softAssert;
     protected RegisterPage registerPage;
 
+    @Parameters({"browser"})
+    @BeforeTest
+    public void setup(String browserName){ //browserName comes from testNG xml file
+        driverFactory = new DriverFactory();
+        properties = driverFactory.initProperty();
 
+        if (browserName!=null){
+            //the browserName from xml will override the browser name that we set in the properties file
+            properties.setProperty("browser", browserName);
+        }
+
+        driver = driverFactory.initDriver(properties);
+        loginPage = new LoginPage(driver);
+    }
+
+    /* This is used for selenoid
     @Parameters({"browser", "browserversion", "testcasename"})
     @BeforeTest
     public void setup(String browserName, String browserVersion, String testCaseName){
@@ -41,6 +56,8 @@ public class BaseTest {
         //softAssert = new SoftAssert();
         loginPage = new LoginPage(driver);
     }
+
+     */
 
     @AfterTest
     public void tearDown(){
